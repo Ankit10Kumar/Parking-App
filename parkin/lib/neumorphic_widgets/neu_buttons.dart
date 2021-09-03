@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class CircularSoftButton extends StatefulWidget {
   final double radius;
   final Widget icon;
+  final double? height;
+  final double? width;
   final EdgeInsets padding;
   final VoidCallback onpress;
   final Color? basecolor;
@@ -12,6 +14,8 @@ class CircularSoftButton extends StatefulWidget {
   CircularSoftButton(
       {Key? key,
       this.radius = 50,
+      this.height,
+      this.width,
       required this.icon,
       required this.onpress,
       required this.basecolor,
@@ -47,6 +51,8 @@ class _CircularSoftButtonState extends State<CircularSoftButton> {
           child: Container(
             margin: EdgeInsets.all(widget.radius / 4),
             child: ClayAnimatedContainer(
+              height: widget.height,
+              width: widget.width,
               curve: Curves.bounceInOut,
               color: widget.basecolor,
               duration: Duration(milliseconds: 200),

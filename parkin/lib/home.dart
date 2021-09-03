@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:clay_containers/clay_containers.dart';
-import 'package:missionedforum/neumorphic_widgets/neu_buttons.dart';
+import 'package:parkin/neumorphic_widgets/neu_buttons.dart';
+// import 'package:missionedforum/neumorphic_widgets/neumorphic_colors.dart';
 // import 'package:missionedforum/neumorphic_widgets/neumorphic_colors.dart';
 // import 'package:missionedforum/neumorphic_widgets/neumorphic_colors.dart';
 // import 'package:missionedforum/postlists.dart';
@@ -35,13 +36,7 @@ class _HomeState extends State<Home> {
                     size: 15,
                     color: Colors.purpleAccent,
                   ),
-                  onpress: () {
-                    setState(() {
-                      // backgroundColor = (backgroundColor == Colors.grey[850])
-                      //     ? Color(0xFFE0E0E0)
-                      //     : Colors.grey[850];
-                    });
-                  },
+                  onpress: () {},
                 ),
                 ClayText(
                   'PArkIn',
@@ -70,17 +65,34 @@ class _HomeState extends State<Home> {
                 spread: 5,
                 color: backgroundColor,
                 child: TextField(
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: Colors.white),
                   cursorColor: Colors.grey,
                   cursorWidth: 3,
                   cursorRadius: Radius.circular(20),
                   cursorHeight: 21,
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(left: 30),
+                      hintStyle: TextStyle(color: Colors.white38),
+                      hintText: ' Search Parkign nearby you',
+                      contentPadding: EdgeInsets.only(left: 30, right: 30),
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none),
                 ),
               ),
             ),
+            Container(
+              height: 100,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  CircularSoftButton(
+                    icon: Container(),
+                    onpress: () => {},
+                    basecolor: backgroundColor,
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
